@@ -13,9 +13,6 @@ $Euros = round($Francs / 6.56, 2);
 echo "Montant en francs: $Francs<br>";
 echo "$Francs francs = $Euros €<br>";
 
-    
-
-
         
 
     
