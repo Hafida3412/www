@@ -12,22 +12,42 @@
 /*$p1 = new Personne("DUPONT", "Michel", "1980-02-19");
 $p2 = new Personne("DUCHEMIN", "Alice", "1985-01-17");*/
 
-    $newPersonne = [
-        "p1" => [
-            "prénom" => "Michel",
-            "nom" => "DUPONT",
-            "date de naissance" => "1980-02-19"
-        ],
-        "p2" => [
-            "prénom" => "Alice",
-            "nom" => "DUCHEMIN",
-            "date de naissance"=> "1985-01-17"
-        ]
-        ];
-    
-    foreach($newPersonne as $prénom => $nom) {
-        echo ucfirst($Prénom) . mb_strtoupper($Nom);
+Class Personne{
+ private $_nom;
+ private $_prenom;
+ private $_dateNaissance;
+
+    public function __construct($nom, $prenom, $dateNaissance){
+        $this->_nom = $nom;
+        $this->_prenom = $prenom;
+        $this-> _dateNaissance = new DateTime($dateNaissance);
     }
 
+    public function getNom(){
+        return $this->_nom;
+    }
 
+    public function getPrenom(){
+            return $this->_prenom;
+        }
+
+    public function getDateNaissance(){
+        return $this->_dateNaissance->format('Y-m-d');
+    }
+
+public function calcAge(){   
+    return $this->_dateNaissance->diff(new DateTime())->y;
+}
+
+public function getInfos(){
+    echo $this-> _nom."<br>". $this->_prenom." a<br>". $this->calcAge()."ans<br>";
+}
+}
+/*$poste = new Personne("DUPONT", "Michel", "1980-02-19");
+echo $poste->getDateNaissance() ;*/
+
+$p1 = new Personne("DUPONT", "Michel", "1980-02-19");
+echo $p1->getInfos()."<br>";
+$p2 = new Personne("DUCHEMIN", "Alice", "1985-01-17");
+echo $p2->getInfos()."<br>";
 
