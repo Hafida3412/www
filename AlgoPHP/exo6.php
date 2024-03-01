@@ -6,3 +6,15 @@
 
 
 <?php
+
+$PU= 9.99;
+$Nombre = 5;
+$TauxTVA = 0.2;
+
+$TotalHT = $PU * $Nombre;
+$TotalTTC = $TotalHT * (1 + $TauxTVA);
+
+echo "Prix untitaire de l'article: $PU €<br>";
+echo "Quantité: $Nombre<br>";
+echo "Taux de TVA: $TauxTVA<br>";
+echo "Le montant de la facture à régler est de: $TotalTTC €";

@@ -6,8 +6,13 @@
 
 <?php
 
-$Montant= 100;
-$TauxEuros = 6.55957;
 
+$Francs = 100;
+$Valeur = 6.56;
+$Euros = round($Francs / 6.56, 2);
+echo "Montant en francs: $Francs<br>";
+echo "$Francs francs = $Euros €<br>";
 
+        
 
+    
